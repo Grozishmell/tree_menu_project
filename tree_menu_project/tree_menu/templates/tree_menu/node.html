@@ -1,0 +1,12 @@
+<details {% if node.expanded %}open{% endif %}>
+  <summary>
+    {% if node.item.url %}
+      <a href="{{ node.item.get_url }}">{{ node.item.title }}</a>
+    {% else %}
+      {{ node.item.title }}
+    {% endif %}
+  </summary>
+  {% for child in node.children %}
+    {% include "tree_menu/node.html" with node=child %}
+  {% endfor %}
+</details>

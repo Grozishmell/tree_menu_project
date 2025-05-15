@@ -1,0 +1,12 @@
+{# templates/home.html #}
+{% extends "base.html" %}
+
+{% load menu_tags %}
+
+{% block content %}
+  <h1>Главная страница</h1>
+  {% draw_menu 'main_menu' as tree %}
+  <nav>
+    {% include "tree_menu/menu.html" with tree=tree %}
+  </nav>
+{% endblock %}
